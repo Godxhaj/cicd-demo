@@ -7,7 +7,7 @@ jobs:
   say-username:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout Code
+      - name: Checkout Code
 	uses: actions/checkout@v3
 
       - name: echo github username
