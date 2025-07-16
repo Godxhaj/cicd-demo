@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout Code
-	uses: actions/checkout@v4
+	uses: actions/checkout@v3
 
       - name: echo github username
 	run: echo" your github name is : ${{ github.actor }}"
