@@ -1,0 +1,14 @@
+name: Echo Username
+
+on:
+  push:
+
+jobs:
+  say-username:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout Code
+	uses: actions/checkout@v4
+
+      - name: echo github username
+	run: echo" your github name is : ${{ github.actor }}"
