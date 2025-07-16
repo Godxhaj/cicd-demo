@@ -6,9 +6,10 @@ on:
 jobs:
   say-username:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-	uses: actions/checkout@v3
 
-      - name: echo github username
-	run: echo" your github name is : ${{ github.actor }}"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Echo GitHub actor
+        run: echo "Username is ${{ github.actor }}"
