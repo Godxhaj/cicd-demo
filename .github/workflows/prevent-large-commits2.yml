@@ -1,0 +1,21 @@
+name: Prevent Large commits
+
+on:
+  push:
+
+jobs:
+  check-commit-size:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Check for large changes
+        run: |
+          echo "Searching for large changes"
+          LargeFiles=$(find . -type f -size +1M ! -path "./.git/*")
+          if [ ! -z "$LargeFiles" ]; then
+            echo "$LargeFiles too big"
+            exit 1
+          fi
